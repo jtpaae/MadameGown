@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jtpaae.github.io/MadameGown/sitemap.xml
