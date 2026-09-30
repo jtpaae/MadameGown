@@ -1,0 +1,147 @@
+/* Madame Gown (มาดามเกาวน์) - Custom Luxury Thai Atelier Styling */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Pridi:wght@300;400;500;600;700&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-warm-ivory: #FAF7F2;
+  --color-soft-greige: #EAE6E1;
+  --color-mushroom-taupe: #8B8074;
+  --color-smoky-clay: #3C3530;
+  --color-olive-mist: #7D8775;
+  --color-olive-light: #9FA895;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Prompt', 'Plus Jakarta Sans', sans-serif;
+  background-color: #FAF7F2;
+  color: #3C3530;
+  line-height: 1.6;
+}
+
+.font-serif {
+  font-family: 'Pridi', 'Playfair Display', serif;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-prompt {
+  font-family: 'Prompt', sans-serif;
+}
+
+/* Subtle luxury parchment texture overlay */
+.bg-canvas {
+  background-color: #FAF7F2;
+  background-image: radial-gradient(#8B8074 0.4px, transparent 0.4px), radial-gradient(#8B8074 0.4px, #FAF7F2 0.4px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+  background-opacity: 0.03;
+}
+
+/* Custom fine scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B8074;
+  border-radius: 9999px;
+  border: 2px solid #FAF7F2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7D8775;
+}
+
+/* Luxury Card Transitions */
+.luxury-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+}
+
+.luxury-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Gold/taupe hairline divider */
+.hairline-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #8B8074 50%, transparent 100%);
+  opacity: 0.35;
+}
+
+/* Smooth fade-in animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* LINE Button Brand Color */
+.bg-line-green {
+  background-color: #06C755;
+}
+
+.bg-line-green:hover {
+  background-color: #05b34c;
+}
+
+/* Infinite Marquee Continuous Sliding Strip (ผลงานและบรรยากาศ สไลด์ไปเรื่อยๆ) */
+@keyframes marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.marquee-container,
+.gallery-marquee-container {
+  overflow: hidden !important;
+  position: relative !important;
+  width: 100% !important;
+}
+
+.marquee-track,
+.gallery-marquee-track {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 1.25rem !important;
+  width: max-content !important;
+  animation: marquee-scroll 70s linear infinite !important;
+  will-change: transform;
+}
+
+.marquee-track:hover,
+.gallery-marquee-track:hover {
+  animation-play-state: paused !important;
+}
+
+@media (max-width: 768px) {
+  .marquee-track,
+  .gallery-marquee-track {
+    animation-duration: 50s !important;
+    gap: 0.875rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .gallery-marquee-track {
+    animation: none !important;
+    overflow-x: auto !important;
+  }
+}
+

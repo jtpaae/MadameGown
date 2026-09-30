@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>สาธิตลูกศรเลือนๆ และระบบเลื่อนเมาส์ดูภาพเต็มตัว | Madame Gown</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'canvas': '#F7F4EE',
+            'warm-ivory': '#FFFFFF',
+            'soft-greige': '#EAE5DB',
+            'mushroom-taupe': '#8F8578',
+            'smoky-clay': '#2A2624',
+            'olive-mist': '#4C5844',
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'Playfair Display', 'serif'],
+            sans: ['Plus Jakarta Sans', 'Sarabun', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Plus Jakarta Sans', 'Sarabun', sans-serif; background-color: #F7F4EE; }
+    .shadow-luxury { box-shadow: 0 10px 30px -10px rgba(42, 38, 36, 0.12); }
+  </style>
+</head>
+<body class="p-4 sm:p-8 text-smoky-clay">
+  <div class="max-w-4xl mx-auto space-y-6">
+    
+    <!-- Header -->
+    <div class="text-center space-y-2">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-olive-mist/10 text-olive-mist text-xs font-semibold">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+        <span>อัปเกรดใหม่: ลูกศรเลือนๆ (Translucent Arrows) เปลี่ยนรูปง่ายขึ้น</span>
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-serif font-bold text-smoky-clay">
+        ระบบลูกศรเลือนๆ ซ้าย-ขวา & เลื่อนเมาส์ดูภาพเต็มตัว
+      </h1>
+      <p class="text-xs sm:text-sm text-smoky-clay/70 max-w-xl mx-auto">
+        เปลี่ยนจากการกดเลือกที่มุมซ้ายบน มาเป็น **ลูกศรเลือนๆ สไตล์หรูหรา ซ้าย-ขวา** ตรงกลางรูปภาพ พร้อมจุดสลับรูป และระบบเลื่อนเมาส์ขึ้น-ลง เพื่อดูภาพจรดชายผ้า
+      </p>
+    </div>
+
+    <!-- Product Card Demonstration -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start bg-white p-6 sm:p-8 rounded-3xl border border-mushroom-taupe/30 shadow-luxury">
+      
+      <!-- Interactive Image Frame with Arrows -->
+      <div class="md:col-span-6">
+        <div class="relative aspect-[4/5] rounded-2xl bg-soft-greige overflow-hidden group cursor-ns-resize border border-mushroom-taupe/25 shadow-sm" id="gown-only-img-container">
+          
+          <!-- Image Wrapper with Pan -->
+          <div id="gown-only-pan-wrapper" class="w-full h-full absolute inset-0 overflow-hidden flex items-start justify-center">
+            <img 
+              id="card-gown-only-img"
+              src="assets/images/products/gown_standard.jpg" 
+              alt="ชุดครุยวิทยฐานะ (อย่างเดียว) มาดามเกาวน์" 
+              class="w-full h-auto min-h-[125%] object-cover object-top select-none pointer-events-none transition-transform duration-100 ease-out will-change-transform"
+              style="transform: translateY(0px);"
+            />
+          </div>
+
+          <!-- Floating Translucent Navigation Arrows (ลูกศร เลือนๆ ซ้าย-ขวา) -->
+          <button 
+            type="button" 
+            id="btn-gown-prev" 
+            class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/75 hover:bg-white text-smoky-clay backdrop-blur-md border border-white/60 shadow-lg flex items-center justify-center transition-all duration-200 opacity-80 hover:opacity-100 hover:scale-110 active:scale-95 cursor-pointer"
+            title="กดเพื่อดูรูปก่อนหน้า"
+            aria-label="รูปก่อนหน้า"
+          >
+            <i data-lucide="chevron-left" class="w-5 h-5 text-smoky-clay stroke-[2.5]"></i>
+          </button>
+          <button 
+            type="button" 
+            id="btn-gown-next" 
+            class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/75 hover:bg-white text-smoky-clay backdrop-blur-md border border-white/60 shadow-lg flex items-center justify-center transition-all duration-200 opacity-80 hover:opacity-100 hover:scale-110 active:scale-95 cursor-pointer"
+            title="กดเพื่อดูรูปถัดไป"
+            aria-label="รูปถัดไป"
+          >
+            <i data-lucide="chevron-right" class="w-5 h-5 text-smoky-clay stroke-[2.5]"></i>
+          </button>
+
+          <!-- Top Floating Header: Photo Indicator Pill & Category Badge -->
+          <div class="absolute top-3 inset-x-3 z-20 flex items-center justify-between gap-2 pointer-events-none">
+            <!-- Current Photo Indicator Tag (Auto updates) -->
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-warm-ivory/95 backdrop-blur-md border border-mushroom-taupe/30 text-xs font-semibold text-smoky-clay shadow-sm pointer-events-auto">
+              <span id="gown-indicator-icon"><i data-lucide="camera" class="w-3.5 h-3.5 text-olive-mist"></i></span>
+              <span id="gown-indicator-text">1/2 ทรงเต็มตัว (Standard)</span>
+            </div>
+
+            <span class="px-2.5 py-1 rounded-full bg-olive-mist/95 backdrop-blur-md text-[10.5px] font-medium text-white shadow-xs pointer-events-auto">
+              3. ชุดครุยอย่างเดียว
+            </span>
+          </div>
+
+          <!-- Bottom Floating Bar: Hover Hint & Dots Navigation -->
+          <div class="absolute bottom-3 inset-x-3 z-10 flex items-center justify-between gap-2 pointer-events-none">
+            <!-- Hover Hint Badge -->
+            <div class="px-3 py-1.5 rounded-xl bg-warm-ivory/95 backdrop-blur-md text-[10.5px] font-semibold text-smoky-clay border border-mushroom-taupe/30 shadow-xs flex items-center gap-1.5 pointer-events-auto select-none transition-all duration-300 group-hover:bg-olive-mist group-hover:text-white">
+              <i data-lucide="chevrons-up-down" class="w-3.5 h-3.5 text-olive-mist group-hover:text-white transition-colors"></i>
+              <span id="gown-only-hover-hint">ชี้เมาส์เลื่อนขึ้น-ลง เพื่อดูภาพเต็ม</span>
+            </div>
+
+            <!-- Dots Navigation -->
+            <div class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-smoky-clay/70 backdrop-blur-md border border-white/20 shadow-sm pointer-events-auto">
+              <button type="button" id="gown-dot-0" class="w-4 h-1.5 rounded-full bg-white transition-all cursor-pointer" title="รูปที่ 1 ทรงเต็มตัว" aria-label="รูปที่ 1"></button>
+              <button type="button" id="gown-dot-1" class="w-1.5 h-1.5 rounded-full bg-white/50 hover:bg-white/80 transition-all cursor-pointer" title="รูปที่ 2 รายละเอียด 5 จุด" aria-label="รูปที่ 2"></button>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-[11px] text-mushroom-taupe text-center mt-2.5">
+          💡 สามารถกดลูกศรเลือนๆ ซ้าย-ขวา หรือกดจุดไข่ปลา หรือปัดหน้าจอ (Swipe) เพื่อเปลี่ยนรูป
+        </p>
+      </div>
+
+      <!-- Description & Interactive Features Guide -->
+      <div class="md:col-span-6 space-y-4">
+        <div>
+          <span class="text-xs font-semibold text-olive-mist uppercase tracking-wider">3. ชุดครุย (อย่างเดียว)</span>
+          <h2 class="font-serif text-2xl font-bold text-smoky-clay mt-1">ชุดครุยวิทยฐานะ (อย่างเดียว)</h2>
+          <p class="text-xs text-smoky-clay/75 mt-1.5 leading-relaxed">
+            ตัวชุดตัดเย็บตามแพทเทิร์นปรับสมดุลช่วงไหล่เฉพาะบุคคล สวมใส่สบาย ไม่หนัก ไม่รั้งคอ ระบายอากาศยอดเยี่ยม
+          </p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-canvas border border-mushroom-taupe/20 space-y-3">
+          <h3 class="text-xs font-bold text-smoky-clay flex items-center gap-1.5">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+            <span>ข้อดีของการเปลี่ยนมาใช้ลูกศรเลือนๆ (Translucent Arrows):</span>
+          </h3>
+          <ul class="text-xs text-smoky-clay/80 space-y-2 list-disc list-inside">
+            <li><strong>หาง่าย ชัดเจน:</strong> อยู่ตรงกลางรูปทั้งฝั่งซ้ายและขวา ไม่ต้องมองหามุมเล็กๆ</li>
+            <li><strong>กดง่าย ไม่พลาด:</strong> ปุ่มทรงกลมขนาด 40px กดได้แม่นยำทั้งบนคอมและมือถือ</li>
+            <li><strong>ดีไซน์หรูหรา:</strong> พื้นหลังกระจกฝ้าเลือนๆ (Frosted Glass) ไม่บดบังรายละเอียดชุดครุย</li>
+            <li><strong>มีบอกลำดับรูป:</strong> แถบสถานะด้านบนแสดง "1/2 ทรงเต็มตัว" และ "2/2 เจาะลึก 5 จุด" ชัดเจน</li>
+            <li><strong>มีระบบเลื่อนเมาส์:</strong> ชี้เมาส์ขึ้น-ลงในรูปที่ 1 จะเห็นคอเสื้อจนถึงชายกระโปรงครบ 100%</li>
+          </ul>
+        </div>
+
+        <div class="pt-2">
+          <a href="index.html#card-gown-only" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-olive-mist text-white text-xs font-semibold hover:bg-olive-mist/90 transition-all shadow-sm">
+            <span>กลับไปยังหน้าหลักร้านค้า</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) window.lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
