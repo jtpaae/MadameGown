@@ -1085,7 +1085,7 @@ function initBookingModal() {
       if (summaryQrAmount) summaryQrAmount.textContent = `฿${total.toLocaleString()}.00`;
       if (summaryQrRef) summaryQrRef.textContent = orderRef;
       if (summaryQrImg) {
-        const qrData = encodeURIComponent(`https://promptpay.io/0894567890/${total}`);
+        const qrData = encodeURIComponent(`https://promptpay.io/0936165438/${total}`);
         summaryQrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${qrData}`;
       }
 
@@ -1328,7 +1328,7 @@ ${currentOrderData.discountFee > 0 ? `- ส่วนลดคูปอง: -฿$
 
 📍 ที่อยู่สำหรับส่งพัสดุคืนชุด:
    ห้องเสื้อ Madame Gown (แผนกคืนชุดครุย)
-   โทร. 089-456-7890 | LINE: https://line.me/ti/p/rjTwr_ZsQv
+   โทร. 093-616-5438 | LINE: https://line.me/ti/p/rjTwr_ZsQv
    (เมื่อจัดส่งพัสดุแล้ว สามารถถ่ายรูปสลิปเลข Tracking แจ้งแอดมินทาง LINE ได้ตลอด 24 ชม.)`);
       }
       formData.append('Order_Number_หมายเลขคำสั่งซื้อ', currentOrderData.orderRef);
