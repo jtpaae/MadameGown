@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Madame Gown (มาดามเกาวน์) — Digital Contact Card นามบัตรดิจิทัล</title>
-  <meta name="description" content="ติดต่อ Madame Gown (มาดามเกาวน์) ห้องเสื้อชุดครุยวิทยฐานะและสูทสั่งตัดชั้นสูง โทร 093-616-5438, LINE ID: madamegown, WhatsApp, และเว็บไซต์ทางการ" />
+  <meta name="description" content="ติดต่อ Madame Gown (มาดามเกาวน์) ห้องเสื้อชุดครุยวิทยฐานะและสูทสั่งตัดชั้นสูง โทร 093-616-5438, 089-694-6286, LINE ID: madamegown, WhatsApp, และเว็บไซต์ทางการ" />
   
   <!-- Open Graph -->
   <meta property="og:type" content="profile" />
   <meta property="og:title" content="Madame Gown (มาดามเกาวน์) — Contact Card" />
-  <meta property="og:description" content="ช่องทางการติดต่อห้องเสื้อ Madame Gown บริการตัดและเช่าชุดครุยวิทยฐานะ โทร: 093-616-5438, LINE: madamegown" />
+  <meta property="og:description" content="ช่องทางการติดต่อห้องเสื้อ Madame Gown บริการตัดและเช่าชุดครุยวิทยฐานะ โทร: 093-616-5438, 089-694-6286, LINE: madamegown" />
   <meta property="og:image" content="https://jtpaae.github.io/MadameGown/assets/images/logo.jpg" />
   <meta property="og:url" content="https://jtpaae.github.io/MadameGown/card.html" />
 
@@ -163,24 +163,40 @@
         </div>
       </a>
 
-      <!-- 3. Direct Phone Call -->
-      <a 
-        href="tel:0936165438" 
-        class="tap-effect group flex items-center gap-4 p-4 rounded-2xl bg-olive-mist hover:bg-olive-mist/90 text-white shadow-luxury border border-olive-mist cursor-pointer"
-      >
-        <div class="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center shrink-0 text-white group-hover:scale-110 transition-transform">
-          <i data-lucide="phone-call" class="w-6 h-6"></i>
-        </div>
-        <div class="flex-1 min-w-0 text-left">
-          <div class="flex items-center justify-between">
-            <span class="font-bold text-sm sm:text-base tracking-wide text-white">โทรติดต่อโดยตรง (Call)</span>
-            <span class="px-2 py-0.5 rounded-full bg-white/25 text-[10px] font-semibold text-white tracking-wider">โทรออก</span>
+      <!-- 3. Direct Phone Calls (2 Numbers) -->
+      <div class="p-4 rounded-2xl bg-olive-mist text-white shadow-luxury border border-olive-mist space-y-2.5">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2.5">
+            <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center shrink-0 text-white">
+              <i data-lucide="phone-call" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <span class="font-bold text-sm sm:text-base tracking-wide text-white block">โทรติดต่อโดยตรง (Call)</span>
+              <span class="text-[11px] text-white/90 block">คุณแม่ช่างใหญ่ & ทีมงานห้องเสื้อ</span>
+            </div>
           </div>
-          <p class="text-[11px] text-white/90 truncate mt-0.5 font-mono">
-            093-616-5438 • คุณแม่ช่างใหญ่ & ทีมงาน
-          </p>
+          <span class="px-2.5 py-0.5 rounded-full bg-white/25 text-[10px] font-semibold text-white tracking-wider">2 เบอร์ร้าน</span>
         </div>
-      </a>
+
+        <div class="grid grid-cols-2 gap-2 pt-1">
+          <a 
+            href="tel:0936165438" 
+            class="tap-effect flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-white text-olive-mist hover:bg-warm-ivory font-bold text-xs shadow-xs transition-colors cursor-pointer"
+            title="โทรออก 093-616-5438"
+          >
+            <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+            <span class="font-mono">093-616-5438</span>
+          </a>
+          <a 
+            href="tel:0896946286" 
+            class="tap-effect flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-white text-olive-mist hover:bg-warm-ivory font-bold text-xs shadow-xs transition-colors cursor-pointer"
+            title="โทรออก 089-694-6286"
+          >
+            <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+            <span class="font-mono">089-694-6286</span>
+          </a>
+        </div>
+      </div>
 
       <!-- 4. Add LINE -->
       <a 
@@ -237,15 +253,31 @@
       <div class="flex items-center justify-between text-smoky-clay">
         <span class="text-mushroom-taupe flex items-center gap-1.5">
           <i data-lucide="phone" class="w-3.5 h-3.5 text-olive-mist"></i>
-          <span>เบอร์โทรศัพท์:</span>
+          <span>เบอร์โทร 1:</span>
         </span>
         <button 
           type="button" 
-          onclick="copyText('0936165438', 'คัดลอกเบอร์โทรแล้ว!')"
+          onclick="copyText('0936165438', 'คัดลอกเบอร์ 093-616-5438 แล้ว!')"
           class="font-mono font-bold text-olive-mist hover:text-smoky-clay flex items-center gap-1 cursor-pointer"
-          title="คลิกเพื่อคัดลอกเบอร์"
+          title="คลิกเพื่อคัดลอกเบอร์ 1"
         >
           <span>093-616-5438</span>
+          <i data-lucide="copy" class="w-3 h-3 text-mushroom-taupe"></i>
+        </button>
+      </div>
+
+      <div class="flex items-center justify-between text-smoky-clay pt-1.5 border-t border-mushroom-taupe/15">
+        <span class="text-mushroom-taupe flex items-center gap-1.5">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-olive-mist"></i>
+          <span>เบอร์โทร 2:</span>
+        </span>
+        <button 
+          type="button" 
+          onclick="copyText('0896946286', 'คัดลอกเบอร์ 089-694-6286 แล้ว!')"
+          class="font-mono font-bold text-olive-mist hover:text-smoky-clay flex items-center gap-1 cursor-pointer"
+          title="คลิกเพื่อคัดลอกเบอร์ 2"
+        >
+          <span>089-694-6286</span>
           <i data-lucide="copy" class="w-3 h-3 text-mushroom-taupe"></i>
         </button>
       </div>
@@ -405,10 +437,11 @@
         'ORG;CHARSET=UTF-8:Madame Gown Atelier (ห้องเสื้อมาดามเกาวน์)',
         'TITLE;CHARSET=UTF-8:ชุดครุยวิทยฐานะและสูทสากลสั่งตัด',
         'TEL;TYPE=CELL,VOICE,PREF:0936165438',
+        'TEL;TYPE=WORK,VOICE:0896946286',
         'URL;TYPE=WORK:https://jtpaae.github.io/MadameGown',
         'URL;TYPE=LINE:https://line.me/ti/p/rjTwr_ZsQv',
         'URL;TYPE=WHATSAPP:https://wa.me/66936165438',
-        'NOTE;CHARSET=UTF-8:LINE ID: madamegown | บริการตัดและเช่าชุดครุย ม.ศรีปทุม ทุกวิทยาเขต โทร 093-616-5438',
+        'NOTE;CHARSET=UTF-8:LINE ID: madamegown | บริการตัดและเช่าชุดครุย ม.ศรีปทุม ทุกวิทยาเขต โทร 093-616-5438, 089-694-6286',
         'ADR;TYPE=WORK;CHARSET=UTF-8:;;อาคารสยามสาทร ชั้น 3;กรุงเทพมหานคร;จตุจักร / บางเขน;10900;Thailand',
         'END:VCARD'
       ].join('\r\n');
@@ -454,3 +487,4 @@
   </script>
 </body>
 </html>
+

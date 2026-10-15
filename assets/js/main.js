@@ -1328,7 +1328,7 @@ ${currentOrderData.discountFee > 0 ? `- ส่วนลดคูปอง: -฿$
 
 📍 ที่อยู่สำหรับส่งพัสดุคืนชุด:
    ห้องเสื้อ Madame Gown (แผนกคืนชุดครุย)
-   โทร. 093-616-5438 | LINE: https://line.me/ti/p/rjTwr_ZsQv
+   โทร. 093-616-5438, 089-694-6286 | LINE: https://line.me/ti/p/rjTwr_ZsQv
    (เมื่อจัดส่งพัสดุแล้ว สามารถถ่ายรูปสลิปเลข Tracking แจ้งแอดมินทาง LINE ได้ตลอด 24 ชม.)`);
       }
       formData.append('Order_Number_หมายเลขคำสั่งซื้อ', currentOrderData.orderRef);
